@@ -4,6 +4,7 @@ const routes = require("./routes");
 
 //create express server
 const app = express();
+app.use(express.static('public'));
 
 // sets pot for herouku or local 3000
 const PORT = process.env.PORT || 3000;
