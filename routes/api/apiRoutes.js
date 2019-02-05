@@ -16,6 +16,11 @@ router.post("/api/notes", function(req,res) {
   });
 });
 
+// to do, put request
+// router.put("/api/notes/:id", function (req, res) {
+//   connection.query("UPDATE);
+// });
+
 // delete a post based on parameters passed
 router.delete ("/api/notes/:id", function (req, res) {
   connection.query(
