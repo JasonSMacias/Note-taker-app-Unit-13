@@ -16,11 +16,5 @@ router
   res.sendFile(path.join(__dirname, "../../public/notes.html"));
 });
 
-// other paths get 404 page
-// router.get("*", function(req, res) {
-  //couldn't get this 404 page to work for some reason
-  // res.sendFile(path.join (__dirname, "../../public/404.html"));
-  // res.sendFile(path.join(__dirname, "../public/donations.html"));
-// });
 
 module.exports = router;

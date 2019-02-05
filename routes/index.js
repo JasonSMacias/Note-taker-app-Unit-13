@@ -5,8 +5,14 @@ const htmlRoutes = require("./html");
 router.use("/", htmlRoutes);
 router.use("/api", apiRoutes);
 
+// router.get("*", function(req, res) {
+//   res.send("<h1>404 error</h1>");
+// });
+// other paths get 404 page
 router.get("*", function(req, res) {
-  res.send("<h1>404 error</h1>");
+  
+  res.sendFile(path.join (__dirname, "../public/404.html"));
+  
 });
 
 module.exports = router;
