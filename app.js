@@ -1,7 +1,7 @@
 // requiring stuff
 const express = require("express");
-const apiRoutes = require("./routes/apiRoutes");
-const htmlRoutes = require("./routes/htmlRoutes");
+const apiRoutes = require("./routes/api/apiRoutes.js");
+const htmlRoutes = require("./routes/html/htmlRouts.js");
 
 //create express server
 const app = express();

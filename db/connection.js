@@ -2,7 +2,7 @@
 const mysql = require("mysql");
 require("dotenv").config();
 
-const connection;
+var connection;
 // Sets up db to connect locally or on JAWSDB if deployed
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: MYSQL_PW,
+    password: process.env.MYSQL_PW,
     database: "notetaker_db"
   });
 }

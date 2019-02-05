@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const connection = require("../db/connection");
+const connection = require("../../db/connection");
 
 // index html at /
 router.get("/", function(req, res){
@@ -16,3 +16,5 @@ router.get("/notes", function(req, res){
 router.get("*", function(req, res) {
   res.sendFile(path.join (--__dirname, "../public/404.html"));
 });
+
+module.exports = router;
