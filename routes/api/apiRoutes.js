@@ -14,6 +14,7 @@ router.post("/", function(req,res) {
     if (err) throw err;
     res.json(result);
   });
+  console.log(req.body);
 });
 
 // to do, put request
