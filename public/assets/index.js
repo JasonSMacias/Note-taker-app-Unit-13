@@ -33,13 +33,15 @@ $("#save-note").on("click", function() {
     }).then(getNotes());
 });
 
+// I haven't been able to get the delete buttons to work.  They won't even trigger a console.log if that is all I have them do :-/
+
 // $("#delete-button").on("click", function() {
-//   event.preventDefault();
-//   const deleteData = {
-//     title: $($(this).attr("data-title")).val().trim(),
-//     body: $($(this).attr("data-body")).val().trim()
-//   };
-//   console.log("hello");
+  // event.preventDefault();
+  // const deleteData = {
+  //   title: $($(this).attr("data-title")).val().trim(),
+  //   body: $($(this).attr("data-body")).val().trim()
+  // };
+  // console.log("hello");
 // });
 
 // $(this).attr("data-name")
