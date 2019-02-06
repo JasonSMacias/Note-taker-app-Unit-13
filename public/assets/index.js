@@ -10,7 +10,7 @@ function getNotes(){
         console.log(notes);
         $("#note-column").empty();
         for (x of notes){
-          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark" id="delete-button" data-title="${x.title}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
+          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-title="${x.title}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
         };
       });
 };
@@ -38,18 +38,18 @@ $("#save-note").on("click", function() {
 
 function deleteListener(){
   // alert("starting");
-  $("#delete-button").click(function() {
+  $(".delete-button").click(function() {
     // event.preventDefault();
-    const deleteData = {
-      title: $($(this).attr("data-title")).val(),
-      body: $($(this).attr("data-body")).val()
+    let deleteData = {
+      title: $(this).attr("data-title").trim(),
+      body: $(this).attr("data-body").trim(),
     };
     console.log(deleteData);
     alert("Delete button under construction :-/");
   });
 };
 
-setTimeout(function(){deleteListener();}, 100);
+setTimeout(function(){deleteListener(); console.log("ready");}, 1000);
 // $(this).attr("data-name")
 
 
