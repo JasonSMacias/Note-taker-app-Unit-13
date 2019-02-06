@@ -10,7 +10,7 @@ function getNotes(){
         console.log(notes);
         $("#note-column").empty();
         for (x of notes){
-          $(`<h4>${x.title}<h4><button id="delete-button"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
+          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark" id="delete-button" data-title="${x.title}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
         };
       });
 };
@@ -33,9 +33,16 @@ $("#save-note").on("click", function() {
     }).then(getNotes());
 });
 
-// $("#delete-button").on("click",
+// $("#delete-button").on("click", function() {
+//   event.preventDefault();
+//   const deleteData = {
+//     title: $($(this).attr("data-title")).val().trim(),
+//     body: $($(this).attr("data-body")).val().trim()
+//   };
+//   console.log("hello");
+// });
 
-
+// $(this).attr("data-name")
 
 
 
