@@ -35,20 +35,21 @@ $("#save-note").on("click", function() {
     });
 });
 
-// I haven't been able to get the delete buttons to work.  They won't even trigger a console.log if that is all I have them do :-/
+
 function deleteListener(){
   // alert("starting");
   $("#delete-button").click(function() {
     // event.preventDefault();
-    // const deleteData = {
-    //   title: $($(this).attr("data-title")).val().trim(),
-    //   body: $($(this).attr("data-body")).val().trim()
-    // };
-    alert("hi");
+    const deleteData = {
+      title: $($(this).attr("data-title")).val(),
+      body: $($(this).attr("data-body")).val()
+    };
+    console.log(deleteData);
+    alert("Delete button under construction :-/");
   });
 };
 
-setTimeout(function(){deleteListener(); alert("hello");}, 100);
+setTimeout(function(){deleteListener();}, 100);
 // $(this).attr("data-name")
 
 
