@@ -12,7 +12,7 @@ $.ajax({
       };
     });
 
-
+// $("#save-note").on("click", 
 
 
 
