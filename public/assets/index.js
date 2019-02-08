@@ -10,7 +10,7 @@ function getNotes(){
         console.log(notes);
         $("#note-column").empty();
         for (x of notes){
-          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-id="${x.id}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
+          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-id="${x.id}" data-body="${x.body}"><i class="text-danger fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
         };
         deleteListener();
       });
