@@ -12,6 +12,7 @@ function getNotes(){
         for (x of notes){
           $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-id="${x.id}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
         };
+        deleteListener();
       });
 };
 
@@ -50,13 +51,14 @@ function deleteListener(){
       method: "DELETE",
     }).then(function(){
       getNotes();
+      
     });
 
 
   });
 };
 
-setTimeout(function(){deleteListener(); console.log("ready");}, 1000);
+// setTimeout(function(){deleteListener(); console.log("ready");}, 1000);
 // $(this).attr("data-name")
 
 
