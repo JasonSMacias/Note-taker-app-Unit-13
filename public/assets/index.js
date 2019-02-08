@@ -10,7 +10,7 @@ function getNotes(){
         console.log(notes);
         $("#note-column").empty();
         for (x of notes){
-          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-title="${x.title}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
+          $(`<h4>${x.title}<h4><button class="btn btn-sm btn-outline-dark delete-button" data-id="${x.id}" data-body="${x.body}"><i class="fas fa-dumpster"></i></button><p class ="hwText" >${x.body}</p>`).appendTo("#note-column");
         };
       });
 };
@@ -41,11 +41,18 @@ function deleteListener(){
   $(".delete-button").click(function() {
     // event.preventDefault();
     let deleteData = {
-      title: $(this).attr("data-title").trim(),
+      id: $(this).attr("data-id").trim(),
       body: $(this).attr("data-body").trim(),
     };
     console.log(deleteData);
-    alert("Delete button under construction :-/");
+    $.ajax({
+      url: "/api/notes/" + deleteData.id,
+      method: "DELETE",
+    }).then(function(){
+      getNotes();
+    });
+
+
   });
 };
 

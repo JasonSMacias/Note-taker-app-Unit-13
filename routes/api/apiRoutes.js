@@ -27,7 +27,7 @@ router.delete ("/:id", function (req, res) {
   connection.query(
     "DELETE FROM notes WHERE id = ?", [req.params.id], function(err, result){
       if (err) throw err;
-      res.json(resultS);
+      res.json(result);
     }
   );
 });
